@@ -9,10 +9,10 @@ from selenium.webdriver.chrome.options import Options
 from PyQt5.QtGui import QTextCursor
 from mgts_3 import *
 from os import path
-from update_check import isUpToDate
+from update_check import isUpToDate, update
 
 if not isUpToDate(__file__, "https://github.com/leahcim0321/MusicGetter/blob/master/mgts_2.py"):
-   print("yaddy")
+    update(__file__, "https://raw.githubusercontent.com/username/repo/myProgram.py")
 
 
 class MyFirstGUI(QMainWindow):
