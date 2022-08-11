@@ -13,7 +13,7 @@ from os import path
 from update_check import isUpToDate
 
 if not isUpToDate(__file__, "https://raw.githubusercontent.com/username/repo/myProgram.py"):
-   print("yay")
+   print("yady")
 
 class MyFirstGUI(QMainWindow):
     def __init__(self):
