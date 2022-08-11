@@ -8,12 +8,12 @@ import urllib.request
 from selenium.webdriver.chrome.options import Options
 from PyQt5.QtGui import QTextCursor
 from mgts_3 import *
-import os.path
 from os import path
 from update_check import isUpToDate
 
-if not isUpToDate(__file__, "https://raw.githubusercontent.com/username/repo/myProgram.py"):
-   print("yady")
+if not isUpToDate(__file__, "https://github.com/leahcim0321/MusicGetter/blob/master/mgts_2.py"):
+   print("yaddy")
+
 
 class MyFirstGUI(QMainWindow):
     def __init__(self):
