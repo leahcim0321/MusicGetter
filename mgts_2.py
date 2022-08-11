@@ -13,7 +13,7 @@ from update_check import isUpToDate, update
 
 if not isUpToDate(__file__, "https://github.com/leahcim0321/MusicGetter/blob/master/mgts_2.py"):
     update(__file__, "https://raw.githubusercontent.com/username/repo/myProgram.py")
-
+    print("hihihihi")
 
 class MyFirstGUI(QMainWindow):
     def __init__(self):
