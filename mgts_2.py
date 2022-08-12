@@ -18,11 +18,17 @@ import re
 
 try:
     if not isUpToDate(__file__, "https://github.com/leahcim0321/MusicGetter/blob/master/mgts_2.py"):
-
-        #update(__file__, "https://raw.githubusercontent.com/username/repo/myProgram.py")
-        print("hihihihi")
+        message = QMessageBox()
+        message.setWindowTitle("UpdateChecker")
+        message.setText("There is a new Version! Please go to: https://github.com/leahcim0321/MusicGetter/\n The "
+                        "security of your program can not be assured if you have not installed the newest version")
+        message.exec_()
 except requests.exceptions.ConnectionError:
-    print("Coukdnt connect")
+    message = QMessageBox()
+    message.setWindowTitle("UpdateChecker")
+    message.setText("UpdateChecker could not connect to the servers. Maybe you should check if there is a new Version "
+                    "on: https://github.com/leahcim0321/MusicGetter/")
+    message.exec_()
 
 class MyFirstGUI(QMainWindow):
     def __init__(self):
@@ -42,9 +48,10 @@ class MyFirstGUI(QMainWindow):
             x = 0
             url = self.lineEdit_3.text()
             pl = Playlist(self.lineEdit_3.text())
-            message = QMessageBox()
+
 
             self.textBrowser.setText(f"Album: {pl.title}\nViews: {pl.views}\nVideos: {pl.length} Video(s)")
+            message = QMessageBox()
             message.setWindowTitle("Important")
             message.setText("The program will load all infos, your program will probably freeze, in that case please "
                             "be patient and wait.")
