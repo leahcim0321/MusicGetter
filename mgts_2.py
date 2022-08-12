@@ -28,8 +28,8 @@ class MyFirstGUI(QMainWindow):
         self.pushButton_2.clicked.connect(self.search)
         self.pushButton.clicked.connect(self.download)
         try:
-            if not isUpToDate(__file__, "https://github.com/leahcim0321/MusicGetter/blob/master/mgts_2.py"):
-                message = QMessageBox()
+            if not isUpToDate(__file__, "https://raw.githubusercontent.com/leahcim0321/MusicGetter/master/mgts_2.py"):
+                message = QMessageBox() #https://github.com/leahcim0321/MusicGetter/blob/master/mgts_2.py
                 message.setWindowTitle("UpdateChecker")
                 message.setText(
                     "There is a new Version! Please go to: https://github.com/leahcim0321/MusicGetter/\n The "
