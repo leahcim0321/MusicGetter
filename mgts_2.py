@@ -16,19 +16,7 @@ from mp3_tagger import MP3File
 import re
 
 
-try:
-    if not isUpToDate(__file__, "https://github.com/leahcim0321/MusicGetter/blob/master/mgts_2.py"):
-        message = QMessageBox()
-        message.setWindowTitle("UpdateChecker")
-        message.setText("There is a new Version! Please go to: https://github.com/leahcim0321/MusicGetter/\n The "
-                        "security of your program can not be assured if you have not installed the newest version")
-        message.exec_()
-except requests.exceptions.ConnectionError:
-    message = QMessageBox()
-    message.setWindowTitle("UpdateChecker")
-    message.setText("UpdateChecker could not connect to the servers. Maybe you should check if there is a new Version "
-                    "on: https://github.com/leahcim0321/MusicGetter/")
-    message.exec_()
+
 
 class MyFirstGUI(QMainWindow):
     def __init__(self):
@@ -39,7 +27,23 @@ class MyFirstGUI(QMainWindow):
         self.setMinimumSize(650, 750)
         self.pushButton_2.clicked.connect(self.search)
         self.pushButton.clicked.connect(self.download)
-
+        try:
+            if not isUpToDate(__file__, "https://github.com/leahcim0321/MusicGetter/blob/master/mgts_2.py"):
+                message = QMessageBox()
+                message.setWindowTitle("UpdateChecker")
+                message.setText(
+                    "There is a new Version! Please go to: https://github.com/leahcim0321/MusicGetter/\n The "
+                    "security of your program can not be assured if you have not installed the newest version")
+                message.exec_()
+            else:
+                pass
+        except requests.exceptions.ConnectionError:
+            message = QMessageBox()
+            message.setWindowTitle("UpdateChecker")
+            message.setText(
+                "UpdateChecker could not connect to the servers. Maybe you should check if there is a new Version "
+                "on: https://github.com/leahcim0321/MusicGetter/")
+            message.exec_()
     def search(self):
         try:
 
